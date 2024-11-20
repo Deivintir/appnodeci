@@ -9,5 +9,5 @@ app.get("/", (req,res)=> {
 })
 
 app.listen(port, () => {
-    console.log(`Seridor escuchando en hhtp://localhost:${port}`)
+    console.log(`Seridor escuchando en http://localhost:${port}`)
 })
