@@ -36,5 +36,5 @@ jobs:
         with:
           heroku-api-key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "appnodeci"
-          heroku_email: "davidrodter84@gmail.com
+          heroku_email: "davidrodter84@gmail.com"
     
