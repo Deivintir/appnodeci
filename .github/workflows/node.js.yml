@@ -27,3 +27,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: akhileshns/heroku-deploy@v3.13.15 #this is the action
+        with:
+          heroku-api-key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "appnodeci"
+          heroku_email: "davidrodter84@gmail.com
+    
