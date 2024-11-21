@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,8 +24,13 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
+    - name: Install dependencies
+      run: npm install
+    - name: Run test
+      run: npm test
+    - name: Check Job Status status and fail if they are red
+      if: env.WORKFLOW_CONCLUSION == 'failure'
+      run: exit 1
 
   deploy:
     runs-on: ubuntu-latest
